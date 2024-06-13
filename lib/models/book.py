@@ -49,6 +49,14 @@ def find_book_by_id(book_id):
     conn.close()
     return book
 
+def find_books_by_author(author):
+    conn = get_connection()
+    cursor = conn.cursor()
+    cursor.execute('SELECT * FROM books WHERE author = ?', (author,))
+    books = cursor.fetchall()
+    conn.close()
+    return books
+
 def delete_book(book_id):
     conn = get_connection()
     cursor = conn.cursor()
