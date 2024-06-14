@@ -61,9 +61,7 @@ def start_cli():
             books = book_model.find_books_by_author(author)
             for book in books:
                 print(book)
-            else:
-                print("Book not found")
-
+                
         elif choice == "7":
             book_id = input("Enter book ID: ")
             book_model.delete_book(book_id)
